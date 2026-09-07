@@ -1,0 +1,23 @@
+# Environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Data (do not commit raw client extracts or large processed files)
+data/raw/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Secrets / local config
+.env
+*.env
+
+# OS / editor junk
+.DS_Store
+.vscode/
