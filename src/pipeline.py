@@ -1,15 +1,11 @@
-"""Ingest + clean + join the four raw extracts into one analysis-ready dataset.
 
-Run as: python -m src.pipeline
-Re-runs end-to-end from data/raw/ with this single command (D1 acceptance criteria).
-"""
 import pandas as pd
 from pathlib import Path
 
 RAW_DIR = Path("data/raw")
 PROCESSED_DIR = Path("data/processed")
 
-VALID_SKU_RANGE = [f"SKU{i:03d}" for i in range(1, 51)]  # SKU001-SKU050 have sales+master data
+VALID_SKU_RANGE = [f"SKU{i:03d}" for i in range(1, 51)]  
 
 
 def load_raw():
