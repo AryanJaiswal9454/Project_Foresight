@@ -2,7 +2,7 @@
 
 Client: NorthBay Living | Zidio Data Science Internship
 
-**Live dashboard:** https://projectforesight-aryan-jaiswal.streamlit.app/
+**Live dashboard:** https://project-foresight-66bf.onrender.com/
 **Live scoring service:** _(pending deployment - see below)_
 
 ## Problem
