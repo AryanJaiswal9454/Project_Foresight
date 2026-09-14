@@ -1,7 +1,4 @@
-"""Feature engineering: lags, rolling stats, calendar/promo signals.
-Every feature here must be strictly backward-looking - no future data allowed
-to touch a feature, or the backtest in Week 3 will be silently invalid.
-"""
+
 import pandas as pd
 
 
