@@ -1,6 +1,4 @@
-"""Planning dashboard for NorthBay Living ops team.
-Run: streamlit run app/dashboard.py
-"""
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -24,14 +22,14 @@ sales, risk = load_data()
 st.title("FORESIGHT — Demand & Inventory Planning")
 st.caption("NorthBay Living | Updated from latest pipeline run")
 
-# --- Sidebar filters ---
+
 st.sidebar.header("Filters")
 categories = ["All"] + sorted(sales["category"].dropna().unique().tolist())
 selected_category = st.sidebar.selectbox("Category", categories)
 
 filtered_risk = risk if selected_category == "All" else risk[risk["category"] == selected_category]
 
-# --- Top-level KPIs ---
+
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total revenue at risk", f"Rs {filtered_risk['revenue_at_risk'].sum():,.0f}")
 col2.metric("Capital locked in overstock", f"Rs {filtered_risk['capital_locked'].sum():,.0f}")
@@ -40,7 +38,7 @@ col4.metric("SKUs to markdown/clear", int((filtered_risk["risk_quadrant"] == "Ma
 
 st.divider()
 
-# --- Prioritised action list ---
+
 st.subheader("Prioritised reorder / markdown list")
 if len(filtered_risk) == 0:
     st.info("No SKUs match this filter.")
@@ -59,7 +57,7 @@ else:
 
 st.divider()
 
-# --- Decisioning grid ---
+
 st.subheader("Stockout vs overstock risk grid")
 if len(filtered_risk) > 0:
     fig = px.scatter(
@@ -79,7 +77,7 @@ else:
 
 st.divider()
 
-# --- Per-SKU forecast vs actual ---
+
 st.subheader("Forecast vs actual — single SKU")
 sku_options = sorted(sales["sku_id"].unique().tolist())
 selected_sku = st.selectbox("Choose a SKU", sku_options)
