@@ -1,8 +1,4 @@
-"""Baseline + model training, rolling-origin backtest, honest evaluation.
 
-Non-negotiable rule: report WAPE vs baseline honestly. If the model doesn't
-beat seasonal-naive, that is a finding to report, not a failure to hide.
-"""
 import pandas as pd
 import numpy as np
 from pathlib import Path
