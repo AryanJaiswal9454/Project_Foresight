@@ -1,7 +1,4 @@
-"""Stockout / overstock risk scoring - combines forecast with inventory position.
-Must stay transparent and explainable (Section 08) - simple, auditable rules,
-not a black box.
-"""
+
 import pandas as pd
 import numpy as np
 from pathlib import Path
